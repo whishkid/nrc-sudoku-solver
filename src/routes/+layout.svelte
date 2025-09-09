@@ -6,6 +6,7 @@
 </script>
 
 <svelte:head>
+	<title>NRC Sudoku Solver</title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 

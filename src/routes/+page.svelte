@@ -244,19 +244,12 @@
   <h1 class=" text-xl xl:text-4xl font-bold text-center mt-8 mb-4">
     NRC SUDOKU Solver
   </h1>
-
-  <button
-    onclick={solve}
-    class="z-50 absolute top-4 right-4 p-2 bg-blue-500 hover:bg-blue-300 text-white rounded"
-  >
-    Solve
-  </button>
 </div>
 <div
   class="relative mx-auto"
   style="
-    width: min(90vw, 80vh, 1000px);
-    height: min(90vw, 80vh, 1000px);
+    width: min(90vw, 75vh, 1000px);
+    height: min(90vw, 75vh, 1000px);
   "
 >
   <div class="grid w-full h-full grid-cols-9 grid-rows-9 mt-10 border-2">
@@ -277,4 +270,18 @@
       />
     {/each}
   </div>
+</div>
+
+<div
+  class="relative mx-auto"
+  style="
+    width: min(90vw, 80vh, 1000px);
+  "
+>
+  <button
+    onclick={solve}
+    class="z-50 absolute top-4 right-4 p-2 bg-blue-500 hover:bg-blue-300 text-white rounded"
+  >
+    Solve
+  </button>
 </div>
