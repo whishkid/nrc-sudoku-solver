@@ -137,22 +137,9 @@
 
   function keyboardNav(e: KeyboardEvent, cell: cell) {
     if (e.key >= "1" && e.key <= "9") {
-      cell.value = e.key;
-      const nextCell = cells.find((c) => c.x === cell.x + 1 && c.y === cell.y);
-      if (nextCell) {
-        const nextCellObject =
-          cellHtmlObjects[`cell-${nextCell.x}-${nextCell.y}`];
-        nextCellObject?.focus();
-      }
+      return;
     } else if (e.key === "Backspace") {
-      cell.value = null;
-      const prevCell = cells.find((c) => c.x === cell.x - 1 && c.y === cell.y);
-      if (prevCell) {
-        const prevCellObject =
-          cellHtmlObjects[`cell-${prevCell.x}-${prevCell.y}`];
-        prevCellObject?.focus();
-        return;
-      }
+      return;
     } else if (e.key === "ArrowRight") {
       const nextCell = cells.find((c) => c.x === cell.x + 1 && c.y === cell.y);
       if (nextCell) {
@@ -184,8 +171,8 @@
     } else if (e.key === "Tab") {
       //default tab and shift tab behavior is to move focus, so just
       return;
-      e.preventDefault();
     }
+    e.preventDefault();
   }
 
   async function solve() {
