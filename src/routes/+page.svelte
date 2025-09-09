@@ -2,8 +2,8 @@
   type cell = {
     x: number;
     y: number;
-    value: string | null;
-    possibleValues?: Set<string>;
+    value: number | null;
+    possibleValues?: Set<number>;
   };
 
   type group = {
@@ -63,7 +63,7 @@
     for (let gridRow = 0; gridRow < 3; gridRow++) {
       for (let gridCol = 0; gridCol < 3; gridCol++) {
         i++;
-        let group = { name: `MainGrid ${i}`, cells: [] };
+        let group: group = { name: `MainGrid ${i}`, cells: [] };
         for (let r = gridRow * 3 + 1; r <= gridRow * 3 + 3; r++) {
           for (let c = gridCol * 3 + 1; c <= gridCol * 3 + 3; c++) {
             let cell = cells.find((cell) => cell.x === c && cell.y === r);
@@ -176,7 +176,7 @@
   }
 
   async function solve() {
-    let digitsAsStrings = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    let digits = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
     // Set cell values where this cell only has one possible value
     for (const cell of cells) {
@@ -185,8 +185,8 @@
         continue;
       }
 
-      let possibleValues: Set<string> = new Set();
-      for (const digit of digitsAsStrings) {
+      let possibleValues: Set<number> = new Set();
+      for (const digit of digits) {
         let foundInGroup = false;
         const relevantGroups = groups.filter((g) =>
           g.cells.some((c) => c.x == cell.x && c.y == cell.y)
@@ -265,6 +265,7 @@
         class:bg-gray-200={grayCells.some(
           (c) => c.x === cell.x && c.y === cell.y
         )}
+        type="number"
         onkeydown={(e) => keyboardNav(e, cell)}
         bind:this={cellHtmlObjects[`cell-${cell.x}-${cell.y}`]}
         class:border-t-2={cell.y == 1}
