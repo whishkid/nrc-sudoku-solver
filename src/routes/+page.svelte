@@ -169,7 +169,7 @@
         prevCellObject?.focus();
       }
     } else if (e.key === "Tab") {
-      //default tab and shift tab behavior is to move focus, so just
+      //default tab and shift tab behavior is to move focus
       return;
     }
     e.preventDefault();
