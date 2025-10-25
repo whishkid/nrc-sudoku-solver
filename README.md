@@ -2,8 +2,9 @@
 
 An interactive web application that helps you solve NRC Sudoku puzzles from [NRC Handelsblad](https://www.nrc.nl/puzzels/sudoku).
 
-![NRC Sudoku Screenshot](./screenshot.png)
-*Screenshot of the NRC Sudoku Solver interface*
+<!-- Screenshot will be added -->
+<!-- ![NRC Sudoku Screenshot](./screenshot.png) -->
+<!-- *Screenshot of the NRC Sudoku Solver interface* -->
 
 ## What is NRC Sudoku?
 
@@ -22,10 +23,10 @@ NRC Sudoku follows the basic Sudoku rules with an important twist:
 2. **NRC Special Rules:**
    - In addition to the nine standard 3×3 boxes, there are **four extra 3×3 regions** (highlighted in gray)
    - These four additional regions are positioned at:
-     - Top-left corner starting at position (2,2)
-     - Top-right corner starting at position (6,2)
-     - Bottom-left corner starting at position (2,6)
-     - Bottom-right corner starting at position (6,6)
+     - Top-left corner starting at row 2, column 2 (using 1-indexed coordinates)
+     - Top-right corner starting at row 2, column 6
+     - Bottom-left corner starting at row 6, column 2
+     - Bottom-right corner starting at row 6, column 6
    - Each of these four gray regions must also contain all digits 1-9 without repetition
 
 This means NRC Sudoku has **13 regions** in total (9 standard boxes + 4 NRC boxes) that must satisfy the uniqueness constraint, making it significantly more challenging than regular Sudoku!
